@@ -1,0 +1,15 @@
+<select name="type" class="form-select" id="inputGroupSelect01" value="<?php echo $data['type'];?>">
+    <option >--Select Type-- </option>
+    <option value="Principal" <?php echo $data['type'] == 'Principal' ? 'selected' : ''; ?>>Principal</option>
+    <option value="Teacher" <?php echo $data['type'] == 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
+    <option value="Management Staff" <?php echo $data['type'] == 'Management Staff' ? 'selected' : ''; ?>>Management Staff</option>
+    <option value="Accountant" <?php echo $data['type'] == 'Accountant' ? 'selected' : ''; ?>>Accountant</option>
+    <option value="Store Manager" <?php echo $data['type'] == 'Store Manager' ? 'selected' : ''; ?>>Store Manager</option>
+    <option value="Other" <?php echo $data['type'] == 'Other' ? 'selected' : ''; ?>>Other</option>
+ </select> 
+ 
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ Example:- 1)  <?php echo $data['type'] == 'Principal' ? 'selected' : ''; ?>
+                           
+              $data = variable with coloum name.
