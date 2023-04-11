@@ -82,7 +82,9 @@ include 'header.php';
                                         include 'db.php';
                                         $q = "select * from employees LIMIT {$offset},{$limit}";
                                         $res = mysqli_query($conn, $q);
-                                        $sr = 1;
+                                        
+                                        $sr = $page + (4 * ($page-1));
+                                        
                                         if (mysqli_num_rows($res) > 0) {
                                             while ($data = mysqli_fetch_array($res)) {
                                                 ?>
