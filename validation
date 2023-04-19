@@ -1,3 +1,4 @@
 class="needs-validation" novalidate
 
-example:-
+example:- <form method="post" class="needs-validation" novalidate action="vendor-update-save.php" enctype="multipart/form-data">
+          </form>
