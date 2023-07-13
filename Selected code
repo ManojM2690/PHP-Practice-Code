@@ -1,0 +1,18 @@
+<select class="form-select" name="category" required>
+                                            <option>--Select Categori--</option>
+                                            <?php
+
+                                            $q2 = "select * from categories";
+                                            $res2 = mysqli_query($conn, $q2);
+                                            while ($cat_info = mysqli_fetch_array($res2)) {
+                                                
+                                                if($product['category']==$cat_info['cat_id']){
+                                                    $selected="selected";
+                                                }
+                                                else{
+                                                    $selected="";
+                                                }
+                                                echo "<option { $selected } value='{$cat_info['cat_id']}'>{$cat_info['cat_name']}</option>";                                         
+                                               }
+                                            ?>
+                                        </select>
