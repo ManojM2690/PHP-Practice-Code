@@ -1,0 +1,52 @@
+<?php
+include './inc/db.php';
+
+$product_id=$_REQUEST['product_id'];
+
+
+$q1="select * from products where product_id=$product_id";
+$res=mysqli_query($conn,$q1);
+$row=mysqli_fetch_assoc($res);
+
+unlink($row['image1']);
+unlink($row['image2']);
+unlink($row['image3']);
+unlink($row['image4']);
+
+
+$q="delete from products where product_id=$product_id";
+$result=mysqli_query($conn,$q);
+
+if(mysqli_affected_rows($conn)>0)
+{
+    echo '<script>alert("Product deleted successfully");window.location="products.php";</script>';
+    // Success message with SweetAlert
+    /*echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+    echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Product deleted successfully.",
+                timer: 2000,
+                showConfirmButton: false
+            }).then(function() {
+                window.history.back();
+            });
+          </script>';*/
+} else {
+    // Error message with SweetAlert
+    echo '<script>alert("Product not deleted.");window.history.back();</script>';
+    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+    echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Product not remove.",
+                timer: 2000,
+                showConfirmButton: false
+            }).then(function() {
+                window.location.href = "products.php";
+            });
+          </script>';
+}
+?>
