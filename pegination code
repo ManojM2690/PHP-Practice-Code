@@ -82,7 +82,7 @@ include 'header.php';
                                         $sql = "SELECT * FROM categories LIMIT $start, $limit";
                                         $result = $conn->query($sql);
 
-                                        $sr = 1;
+                                        $sr = $start + 1;
 
                                         if ($result->num_rows > 0) {
                                             // Output data
