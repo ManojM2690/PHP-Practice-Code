@@ -1,0 +1,10 @@
+ucwords();
+
+example:-
+    $page_title = ucwords('home page');
+    print_r($page_title);
+
+output:-
+      Home Page
+    
+  
