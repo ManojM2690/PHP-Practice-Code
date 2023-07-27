@@ -1,0 +1,6 @@
+<?Php
+ 
+  $productIds = array(101, 102, 103, 104, 105);
+
+ <input type="text" name="price" value="<?php echo implode(',', $productIds); ?>">
+?>
